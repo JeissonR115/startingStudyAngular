@@ -14,6 +14,10 @@ export class LabsComponent {
     'tarea2',
     'tarea3',
     'tarea4',
-    'tarean',
+    'tareaN',
   ]
+  age = 19
+  disabled= true
+  img = "https://artworks.thetvdb.com/banners/posters/262736-1.jpg"
+  imgDescription = "Descripcion de la imagen"
 }
