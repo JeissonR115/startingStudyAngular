@@ -1,11 +1,32 @@
-<p>labs works!</p>
-
-<ul>
-  @for (task of tasks; track $index) {
-  <li>{{task}}</li>
-  }
-</ul>
-<h1>{{person.name + " " + (person.age > 18?"es mayor de edad":"es menor de edad")}}</h1>
-<input type="text" [value]="person.name">
-<input [disabled]="disabled" type="button" value="Click Me">
-<img [src]="person.img.url" [alt]="person.img.description">
+<main>
+  <p>labs works!</p>
+  <div class="container">
+    <ul>
+      @for (task of tasks; track $index) {
+      <li>{{task}}</li>
+      }
+    </ul>
+  </div>
+  <div class="container">
+    <h1>{{person.name + " " + (person.age > 18?"es mayor de edad":"es menor de edad")}}</h1>
+    <input type="text" [value]="person.name">
+    <input [disabled]="disabled" (click)="clickHandler()" type="button" value="Click Me">
+    <img [src]="person.img.url" [alt]="person.img.description">
+  </div>
+  <div class="container">
+    <input [disabled]="!disabled" (click)="clickHandler()" type="button" value="Click Me">
+    <input (dblclick)="doubleClick()" type="button" value="Click Click Me">
+    <div>
+      <p>(change)</p>
+      <input type="text" (change)="changeHandler($event)">
+    </div>
+    <div>
+      <p>(keyup)</p>
+      <input type="text " (keyup)="keyUpHandler($event)">
+    </div>
+    <div>
+      <p>(keydown + key)</p>
+      <input type="text "  (keydown.enter)="doubleClick()">
+    </div>
+  </div>
+</main>

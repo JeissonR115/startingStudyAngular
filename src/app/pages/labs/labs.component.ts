@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './labs.component.css'
 })
 export class LabsComponent {
-  name = 'jeisson'
   tasks = [
     'tarea1',
     'tarea2',
@@ -16,17 +15,30 @@ export class LabsComponent {
     'tarea4',
     'tareaN',
   ]
-  age = 19
-  disabled = true
-  img = "https://artworks.thetvdb.com/banners/posters/262736-1.jpg"
-  imgDescription = "Descripcion de la imagen"
   person = {
     name: "juan",
     age: 10,
     city: "buenos aires",
     img: {
       url: "https://artworks.thetvdb.com/banners/posters/262736-1.jpg",
-      description: "Descripcion de la image"
+      description: "Description de la imagen"
     }
   }
+  disabled = true
+  clickHandler(){
+    this.disabled = !this.disabled
+    alert("Click")
+  }
+  doubleClick(){
+    alert("Doble Click")
+  }
+  changeHandler(e: Event){
+    const input = e.target as HTMLInputElement;
+    console.log(input.value)
+  }
+  keyUpHandler(e: KeyboardEvent){
+    const input = e.target as HTMLInputElement;
+    console.log(input.value)
+  }
+
 }
