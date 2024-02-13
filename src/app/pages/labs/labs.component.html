@@ -5,7 +5,7 @@
   <li>{{task}}</li>
   }
 </ul>
-<h1>{{name + (age > 18?" es mayor de edad":"es menor de edad")}}</h1>
-<input type="text" [value]="name">
+<h1>{{person.name + " " + (person.age > 18?"es mayor de edad":"es menor de edad")}}</h1>
+<input type="text" [value]="person.name">
 <input [disabled]="disabled" type="button" value="Click Me">
-<img [src]="img" [alt]="imgDescription">
+<img [src]="person.img.url" [alt]="person.img.description">

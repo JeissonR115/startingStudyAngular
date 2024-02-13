@@ -17,7 +17,16 @@ export class LabsComponent {
     'tareaN',
   ]
   age = 19
-  disabled= true
+  disabled = true
   img = "https://artworks.thetvdb.com/banners/posters/262736-1.jpg"
   imgDescription = "Descripcion de la imagen"
+  person = {
+    name: "juan",
+    age: 10,
+    city: "buenos aires",
+    img: {
+      url: "https://artworks.thetvdb.com/banners/posters/262736-1.jpg",
+      description: "Descripcion de la image"
+    }
+  }
 }
