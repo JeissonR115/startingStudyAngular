@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
@@ -15,7 +15,7 @@ export class LabsComponent {
     'tarea4',
     'tareaN',
   ]
-  person = {
+  person = signal({
     name: "juan",
     age: 10,
     city: "buenos aires",
@@ -23,22 +23,19 @@ export class LabsComponent {
       url: "https://artworks.thetvdb.com/banners/posters/262736-1.jpg",
       description: "Description de la imagen"
     }
-  }
+  })
   disabled = true
-  clickHandler(){
+  clickHandler() {
     this.disabled = !this.disabled
     alert("Click")
   }
-  doubleClick(){
+  doubleClick() {
     alert("Doble Click")
   }
-  changeHandler(e: Event){
+  changeHandler(e: Event) {
     const input = e.target as HTMLInputElement;
-    console.log(input.value)
-  }
-  keyUpHandler(e: KeyboardEvent){
-    const input = e.target as HTMLInputElement;
-    console.log(input.value)
+    const newValue = input.value;
+    this.person.set({ ...this.person(), name: newValue })
   }
 
 }

@@ -7,10 +7,10 @@
   </ul>
 </div>
 <div class="container">
-  <h1>{{person.name + " " + (person.age > 18?"es mayor de edad":"es menor de edad")}}</h1>
-  <input type="text" value={{person.name}}> //se puede usar las dobles llaves y/o corchetes
+  <h1>{{person().name + " " + (person().age > 18?"es mayor de edad":"es menor de edad")}}</h1>
+  <input (keyup)="changeHandler" type="text" value={{person().name}}> <!-- se puede usar las dobles llaves y/o corchetes -->
   <input [disabled]="disabled" (click)="clickHandler()" type="button" value="Click Me">
-  <img [src]="person.img.url" [alt]="person.img.description">
+  <img [src]="person().img.url" [alt]="person().img.description">
 </div>
 <div class="container">
   <input [disabled]="!disabled" (click)="clickHandler()" type="button" value="Click Me">
@@ -21,7 +21,7 @@
   </div>
   <div>
     <p>(keyup)</p>
-    <input type="text " (keyup)="keyUpHandler($event)">
+    <input type="text " (keyup)="changeHandler($event)">
   </div>
   <div>
     <p>(keydown + key)</p>
