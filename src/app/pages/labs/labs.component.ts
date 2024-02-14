@@ -1,20 +1,20 @@
 import { Component, input, signal } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css'
 })
 export class LabsComponent {
-  tasks = [
+  tasks = signal ([
     'tarea1',
     'tarea2',
     'tarea3',
     'tarea4',
     'tareaN',
-  ]
+  ])
   person = signal({
     name: "juan",
     age: 10,
