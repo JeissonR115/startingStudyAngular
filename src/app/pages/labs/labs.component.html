@@ -1,7 +1,7 @@
 <h1>labs works!</h1>
 <div class="container">
   <h1>{{person().name + " " + (person().age > 18?"es mayor de edad":"es menor de edad")}}</h1>
-  <input (keyup)="changeHandler" type="text" value={{person().name}}> <!-- se puede usar las dobles llaves y/o corchetes -->
+  <input (keyup)="changeHandler" type="text" value={{person().name}} (keyup)="changeHandler($event)"> <!-- se puede usar las dobles llaves y/o corchetes -->
   <input [disabled]="disabled" (click)="clickHandler()" type="button" value="Click Me">
   <img [src]="person().img.url" [alt]="person().img.description">
 </div>
@@ -35,4 +35,15 @@
       {{i+" - " + task}} 
     </li>
   </ul>
+</div>
+<div class="container">
+  <!-- forma antigua -->
+  <div *ngIf="person().name === 'juan'; else elseBlock"> div a.1 </div>
+  <ng-template #elseBlock> div a.2</ng-template>
+  <!-- forma nueva  -->
+  @if (person().name === 'pipe') {
+    <div> div b.1</div>
+  } @else {
+    <div> div b.2</div>
+  }
 </div>
