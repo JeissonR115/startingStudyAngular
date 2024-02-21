@@ -47,3 +47,22 @@
     <div> div b.2</div>
   }
 </div>
+
+<div class="container">
+  <div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'jeisson'">primer nombre</p>
+    <p *ngSwitchCase="'felipe'">segundo nombre</p>
+    <p *ngSwitchCase="'rodriguez'">primer apellido</p>
+    <p *ngSwitchCase="'prieto'">segundo apellido</p>
+    <p *ngSwitchDefault>NN</p>
+  </div>
+  <div>
+    @switch (person().name) {
+      @case ("juan") {<p>primer nombre</p> }
+      @case ("pablo") {<p>segundo nombre</p> }
+      @case ("ramirez") {<p>primer apellido</p> }
+      @case ("prieto") {<p>segundo apellido</p> }
+      @default {<p>NN</p>}
+    }
+  </div>
+</div>
